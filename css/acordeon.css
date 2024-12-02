@@ -1,0 +1,56 @@
+/* Estilos gerais do acordeão */
+.toggle {
+    max-width: 800px;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Cada item do acordeão */
+.toggle-item {
+    border-bottom: 1px solid #ddd;
+}
+
+/* Título de cada item */
+.toggle-title {
+    padding: 15px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Efeito hover no título */
+.toggle-title:hover {
+    background-color: #e9e9e9;
+}
+
+/* Conteúdo inicialmente escondido */
+.toggle-content {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 15px;
+    background-color: #fff;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+/* Estilo do texto dentro do conteúdo */
+.toggle-content p {
+    margin: 10px 0;
+}
+
+/* Quando ativo, o conteúdo aparece */
+.toggle-item.active .toggle-content {
+    max-height: 200px; /* Ajuste conforme o conteúdo */
+    padding: 15px;
+}
+
+/* Rotação do ícone ao expandir */
+.toggle-item.active .toggle-title i {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+}
