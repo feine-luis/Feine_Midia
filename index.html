@@ -57,7 +57,6 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 <link rel="stylesheet" id="google-fonts-1-css" href="https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CPoppins%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&amp;display=auto&amp;ver=6.6.2" type="text/css" media="all">
 <link rel="stylesheet" id="elementor-icons-shared-0-css" href="css/fontawesome.min.css" type="text/css" media="all">
 <link rel="stylesheet" id="elementor-icons-fa-solid-css" href="css/solid.min.css" type="text/css" media="all">
-<link rel="stylesheet" href="acordeon.css">
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin=""><script type="text/javascript" src="js/jquery.min.js" id="jquery-core-js"></script>
 <script type="text/javascript" src="js/jquery-migrate.min.js" id="jquery-migrate-js"></script>
 <script type="text/javascript" src="js/jquery.blockUI.min.js" id="jquery-blockui-js" defer="defer" data-wp-strategy="defer"></script>
@@ -491,43 +490,60 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		</div>
 					</div>
 		</section>
-			<section>
-    <div class="toggle">
-        <!-- Item 1 -->
-        <div class="toggle-item">
-            <div class="toggle-title">
-                <span>Quem somos</span>
-                <i class="fas fa-angle-down"></i>
+			 <section>
+        <div class="toggle" style="border: 1px solid #ccc; padding: 10px; font-family: Arial, sans-serif;">
+            <!-- Item 1 -->
+            <div class="toggle-item" style="margin-bottom: 10px;">
+                <div class="toggle-title" style="cursor: pointer; font-weight: bold; padding: 10px; background-color: #f1f1f1; border: 1px solid #ddd;" onclick="toggleContent(this)">
+                    <span>Quem somos</span>
+                    <i style="float: right;">+</i>
+                </div>
+                <div class="toggle-content" style="display: none; padding: 10px; background-color: #f9f9f9; border: 1px solid #ddd; border-top: none;">
+                    <p>A Feine Mídia é uma aceleradora de E-commerces, com 4 anos de experiência. Acreditamos em Growth Marketing como base, que é o foco voltado aos resultados de maneira sustentável ao seu negócio.</p>
+                </div>
             </div>
-            <div class="toggle-content">
-                <p>A Feine Mídia é uma aceleradora de E-commerces, com 4 anos de experiência. Acreditamos em Growth Marketing como base, que é o foco voltado aos resultados de maneira sustentável ao seu negócio.</p>
-            </div>
-        </div>
 
-        <!-- Item 2 -->
-        <div class="toggle-item">
-            <div class="toggle-title">
-                <span>Nosso propósito</span>
-                <i class="fas fa-angle-down"></i>
+            <!-- Item 2 -->
+            <div class="toggle-item" style="margin-bottom: 10px;">
+                <div class="toggle-title" style="cursor: pointer; font-weight: bold; padding: 10px; background-color: #f1f1f1; border: 1px solid #ddd;" onclick="toggleContent(this)">
+                    <span>Nosso propósito</span>
+                    <i style="float: right;">+</i>
+                </div>
+                <div class="toggle-content" style="display: none; padding: 10px; background-color: #f9f9f9; border: 1px solid #ddd; border-top: none;">
+                    <p>Crescer o faturamento dos E-commerces de maneira sustentável, analisando os 360º do negócio constantemente.</p>
+                </div>
             </div>
-            <div class="toggle-content">
-                <p>Crescer o faturamento dos E-commerces de maneira sustentável, analisando os 360º do negócio constantemente.</p>
-            </div>
-        </div>
 
-        <!-- Item 3 -->
-        <div class="toggle-item">
-            <div class="toggle-title">
-                <span>Nossa metodologia</span>
-                <i class="fas fa-angle-down"></i>
-            </div>
-            <div class="toggle-content">
-                <p>Para nós o marketing é uma ciência exata, nos guiamos pelos números. Por isso, utilizamos a metodologia de Growth para encontrar os KPI’s chave para escalar qualquer e-commerce.</p>
+            <!-- Item 3 -->
+            <div class="toggle-item" style="margin-bottom: 10px;">
+                <div class="toggle-title" style="cursor: pointer; font-weight: bold; padding: 10px; background-color: #f1f1f1; border: 1px solid #ddd;" onclick="toggleContent(this)">
+                    <span>Nossa metodologia</span>
+                    <i style="float: right;">+</i>
+                </div>
+                <div class="toggle-content" style="display: none; padding: 10px; background-color: #f9f9f9; border: 1px solid #ddd; border-top: none;">
+                    <p>Para nós o marketing é uma ciência exata, nos guiamos pelos números. Por isso, utilizamos a metodologia de Growth para encontrar os KPI’s chave para escalar qualquer e-commerce.</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-	<script src="acordeon.js"></script>
+    </section>
+    <!-- JavaScript -->
+    <script>
+        function toggleContent(element) {
+            const item = element.parentElement;
+            const content = item.querySelector('.toggle-content');
+            const isActive = content.style.display === 'block';
+
+            // Fecha todos os itens
+            document.querySelectorAll('.toggle-content').forEach(content => content.style.display = 'none');
+            document.querySelectorAll('.toggle-title i').forEach(icon => icon.innerHTML = '+');
+
+            // Abre o item clicado, se não estiver ativo
+            if (!isActive) {
+                content.style.display = 'block';
+                element.querySelector('i').innerHTML = '-';
+            }
+        }
+    </script>
 				<section class="elementor-section elementor-top-section elementor-element elementor-element-b70d69a elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="b70d69a" data-element_type="section" data-settings="{" background_background":"gradient"}"="">
 						<div class="elementor-container elementor-column-gap-default">
 					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-352bdfe" data-id="352bdfe" data-element_type="column">
