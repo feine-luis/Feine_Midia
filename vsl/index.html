@@ -56,11 +56,16 @@
     </div>
   </div>
 
+  <!-- JavaScript no final do body -->
   <script>
-    // Exibe o botão após 2 minutos (120.000 milissegundos)
-    setTimeout(() => {
-      document.getElementById('cta-button').style.display = 'inline-block';
-    }, 120000);
+    window.addEventListener('DOMContentLoaded', function () {
+      setTimeout(function () {
+        var button = document.getElementById('cta-button');
+        if (button) {
+          button.style.display = 'inline-block';
+        }
+      }, 20000); // 2 minutos
+    });
   </script>
 
 </body>
