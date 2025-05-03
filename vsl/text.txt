@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de VSL</title>
+    <style>
+        body {
+            background-color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .container {
+            width: 100%;
+            max-width: 800px;
+        }
+        .vsl-video {
+            width: 100%;
+            height: 450px;
+        }
+        .cta-button {
+            display: none;
+            background-color: green;
+            color: white;
+            font-size: 18px;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-decoration: none;
+        }
+        .cta-button:hover {
+            background-color: darkgreen;
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Vídeo da VSL -->
+        <iframe class="vsl-video" src="https://www.youtube.com/embed/i0ph20iohsg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+        <!-- Botão de CTA com delay -->
+        <a href="https://tally.so/" class="cta-button" id="cta-button">Quero Destravar</a>
+        
+        <!-- Copyright -->
+        <div class="footer">
+            <p>&copy; 2025 Feine Mídia. Todos os direitos reservados.</p>
+        </div>
+    </div>
+
+    <script>
+        // Delay para mostrar o botão
+        setTimeout(function() {
+            document.getElementById('cta-button').style.display = 'inline-block';
+        }, 180000); // 3 minutos de delay
+    </script>
+
+</body>
+</html>
