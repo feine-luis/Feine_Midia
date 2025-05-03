@@ -61,16 +61,23 @@
   document.addEventListener("DOMContentLoaded", function () {
     const video = document.getElementById("vsl");
     const button = document.getElementById("cta-button");
-    const DELAY_SECONDS = 10;
+    const DELAY_SECONDS = 120;
+    const STORAGE_KEY = "vsl_unlocked";
 
-    video.addEventListener("timeupdate", function () {
-      if (video.currentTime >= DELAY_SECONDS && button.style.display !== "inline-block") {
-        button.style.display = "inline-block";
-      }
-    });
+    // Se já desbloqueou, mostra imediatamente
+    if (localStorage.getItem(STORAGE_KEY) === "true") {
+      button.style.display = "inline-block";
+    } else {
+      // Senão, ouve o tempo do vídeo
+      video.addEventListener("timeupdate", function () {
+        if (video.currentTime >= DELAY_SECONDS && button.style.display !== "inline-block") {
+          button.style.display = "inline-block";
+          localStorage.setItem(STORAGE_KEY, "true"); // salva que já desbloqueou
+        }
+      });
+    }
   });
 </script>
-
 
 </body>
 </html>
