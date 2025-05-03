@@ -57,16 +57,20 @@
   </div>
 
   <!-- JavaScript no final do body -->
-  <script>
-    window.addEventListener('DOMContentLoaded', function () {
-      setTimeout(function () {
-        var button = document.getElementById('cta-button');
-        if (button) {
-          button.style.display = 'inline-block';
-        }
-      }, 20000); // 2 minutos
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const video = document.getElementById("vsl");
+    const button = document.getElementById("cta-button");
+    const DELAY_SECONDS = 10;
+
+    video.addEventListener("timeupdate", function () {
+      if (video.currentTime >= DELAY_SECONDS && button.style.display !== "inline-block") {
+        button.style.display = "inline-block";
+      }
     });
-  </script>
+  });
+</script>
+
 
 </body>
 </html>
