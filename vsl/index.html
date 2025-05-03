@@ -35,7 +35,7 @@
       background-color: darkgreen;
     }
     .footer {
-      margin-top: 150px;
+      margin-top: 100px;
       font-size: 14px;
       color: #242424;
     }
@@ -44,7 +44,7 @@
 <body>
 
   <div class="video-container">
-    <video id="vsl" autoplay controls>
+    <video id="vsl" autoplay controls controlsList="nodownload nofullscreen noremoteplayback" disablePictureInPicture>
       <source src="vsl.mp4" type="video/mp4">
       Seu navegador não suporta vídeo HTML5.
     </video>
@@ -60,7 +60,7 @@
     // Exibe o botão após 2 minutos (120.000 milissegundos)
     setTimeout(() => {
       document.getElementById('cta-button').style.display = 'inline-block';
-    }, 260000);
+    }, 120000);
   </script>
 
 </body>
