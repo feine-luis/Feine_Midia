@@ -4,6 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>O erro que te impede de escalar as vendas do seu E-commerce</title>
+
+   <!-- Metatags Open Graph para prévia do link -->
+  <meta property="og:title" content="O erro que te impede de escalar as vendas do seu E-commerce">
+  <meta property="og:description" content="Entenda o motivo que faz com que pareça impossível escalar seu faturamento, mesmo que já tenha tentado de tudo. A resposta está em algo que foi deixado de lado.">
+  <meta property="og:image" content="https://feinemidia.com/vsl/imagem-preview.jpg"> <!-- Imagem de prévia -->
+  <meta property="og:url" content="https://feinemidia.com/vsl">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://feinemidia.com/vsl/imagem-preview.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"> <!-- Alterar caminho para o arquivo de ícone -->
+  
   <style>
     body {
       background-color: white;
@@ -56,8 +68,21 @@
     </div>
   </div>
 
-  <!-- JavaScript no final do body -->
-<script>
+  <!-- Bloqueio de Clique Direito e Teclas de Atalho -->
+  <script>
+    // Bloqueia o clique direito
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+    });
+
+    // Bloqueia o F12 e Ctrl + Shift + I
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+        e.preventDefault();
+      }
+    });
+
+    // Exibir botão com base no tempo do vídeo e salvar no localStorage
   document.addEventListener("DOMContentLoaded", function () {
     const video = document.getElementById("vsl");
     const button = document.getElementById("cta-button");
