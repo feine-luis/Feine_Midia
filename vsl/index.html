@@ -5,17 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>O erro que te impede de escalar as vendas do seu E-commerce</title>
 
-   <!-- Metatags Open Graph para prévia do link -->
+  <!-- Metatags Open Graph para prévia do link -->
   <meta property="og:title" content="O erro que te impede de escalar as vendas do seu E-commerce">
   <meta property="og:description" content="Escalar é possível. Mesmo que já você tenha tentado de tudo. A resposta está em algo que passou despercebido.">
-  <meta property="og:image" content="https://feinemidia.com/vsl/imagem-preview.jpg"> <!-- Imagem de prévia -->
+  <meta property="og:image" content="https://feinemidia.com/vsl/imagem-preview.jpg">
   <meta property="og:url" content="https://feinemidia.com/vsl">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://feinemidia.com/vsl/imagem-preview.jpg">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"> <!-- Alterar caminho para o arquivo de ícone -->
-  
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <!-- Plyr CSS -->
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+
   <style>
     body {
       background-color: white;
@@ -26,10 +29,6 @@
     .video-container {
       max-width: 800px;
       margin: 0 auto;
-    }
-    video {
-      width: 100%;
-      height: auto;
     }
     .cta-button {
       display: none;
@@ -47,7 +46,7 @@
       background-color: darkgreen;
     }
     .footer {
-      margin-top: 100px;
+      margin-top: 140px;
       font-size: 14px;
       color: #242424;
     }
@@ -56,8 +55,8 @@
 <body>
 
   <div class="video-container">
-    <video id="vsl" autoplay controls controlsList="nodownload nofullscreen noremoteplayback" disablePictureInPicture>
-      <source src="vsl.mp4" type="video/mp4">
+    <video id="vsl" playsinline autoplay controls data-plyr-config='{"controls": ["play", "progress", "current-time", "mute", "volume"], "pip": false}'>
+      <source src="vsl.mp4" type="video/mp4" />
       Seu navegador não suporta vídeo HTML5.
     </video>
 
@@ -68,41 +67,39 @@
     </div>
   </div>
 
-  <!-- Bloqueio de Clique Direito e Teclas de Atalho -->
+  <!-- Plyr JS -->
+  <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+
   <script>
-    // Bloqueia o clique direito
+    const player = new Plyr('#vsl', {
+      controls: ['play', 'progress', 'current-time', 'mute', 'volume'],
+      disableContextMenu: true
+    });
+
+    // Delay com base no tempo do vídeo
+    document.addEventListener("DOMContentLoaded", function () {
+      const video = document.getElementById("vsl");
+      const button = document.getElementById("cta-button");
+      const DELAY_SECONDS = 260;
+      const STORAGE_KEY = "vsl_unlocked";
+
+      if (localStorage.getItem(STORAGE_KEY) === "true") {
+        button.style.display = "inline-block";
+      } else {
+        video.addEventListener("timeupdate", function () {
+          if (video.currentTime >= DELAY_SECONDS && button.style.display !== "inline-block") {
+            button.style.display = "inline-block";
+            localStorage.setItem(STORAGE_KEY, "true");
+          }
+        });
+      }
+    });
+
+    // Bloqueios de inspeção
     document.addEventListener('contextmenu', function (e) {
       e.preventDefault();
     });
 
-    // Bloqueia o F12 e Ctrl + Shift + I
     document.addEventListener('keydown', function (e) {
       if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
-        e.preventDefault();
-      }
-    });
-
-    // Exibir botão com base no tempo do vídeo e salvar no localStorage
-  document.addEventListener("DOMContentLoaded", function () {
-    const video = document.getElementById("vsl");
-    const button = document.getElementById("cta-button");
-    const DELAY_SECONDS = 260;
-    const STORAGE_KEY = "vsl_unlocked";
-
-    // Se já desbloqueou, mostra imediatamente
-    if (localStorage.getItem(STORAGE_KEY) === "true") {
-      button.style.display = "inline-block";
-    } else {
-      // Senão, ouve o tempo do vídeo
-      video.addEventListener("timeupdate", function () {
-        if (video.currentTime >= DELAY_SECONDS && button.style.display !== "inline-block") {
-          button.style.display = "inline-block";
-          localStorage.setItem(STORAGE_KEY, "true"); // salva que já desbloqueou
-        }
-      });
-    }
-  });
-</script>
-
-</body>
-</html>
+        e.preventDefault
