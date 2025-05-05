@@ -5,13 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>O erro que te impede de escalar as vendas do seu E-commerce</title>
 
-  <!-- Metatags Open Graph para prévia do link -->
+  <!-- Open Graph -->
   <meta property="og:title" content="O erro que te impede de escalar as vendas do seu E-commerce">
-  <meta property="og:description" content="Escalar é possível. Mesmo que já você tenha tentado de tudo. A resposta está em algo que passou despercebido.">
+  <meta property="og:description" content="Escalar é possível. Mesmo que você já tenha tentado de tudo.">
   <meta property="og:image" content="https://feinemidia.com/vsl/imagem-preview.jpg">
   <meta property="og:url" content="https://feinemidia.com/vsl">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://feinemidia.com/vsl/imagem-preview.jpg">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png">
@@ -20,15 +19,26 @@
   <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
 
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     body {
       background-color: white;
       font-family: Arial, sans-serif;
       text-align: center;
       padding: 40px 20px;
+      overflow-x: hidden;
     }
     .video-container {
       max-width: 800px;
       margin: 0 auto;
+    }
+    video {
+      width: 100%;
+      height: auto;
+      max-height: 450px;
     }
     .cta-button {
       display: none;
@@ -55,10 +65,15 @@
 <body>
 
   <div class="video-container">
-    <video id="vsl" playsinline autoplay controls data-plyr-config='{"controls": ["play", "progress", "current-time", "mute", "volume"], "pip": false}'>
-      <source src="vsl.mp4" type="video/mp4" />
-      Seu navegador não suporta vídeo HTML5.
-    </video>
+    <video
+      id="vsl"
+      playsinline
+      autoplay
+      controls
+      disablepictureinpicture
+      controlslist="nodownload nofullscreen noremoteplay noplaybackrate"
+      src="vsl.mp4"
+    ></video>
 
     <a href="https://tally.so/r/nWg9kk" id="cta-button" class="cta-button">QUERO DESTRAVAR</a>
 
@@ -73,7 +88,6 @@
   <script>
     const player = new Plyr('#vsl', {
       controls: ['play', 'progress', 'current-time', 'mute', 'volume'],
-      disableContextMenu: true
     });
 
     // Delay com base no tempo do vídeo
@@ -95,11 +109,21 @@
       }
     });
 
-    // Bloqueios de inspeção
-    document.addEventListener('contextmenu', function (e) {
+    // Bloquear botão direito e teclas de inspeção
+    document.addEventListener("contextmenu", function(e) {
       e.preventDefault();
     });
 
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
-        e.preventDefault
+    document.addEventListener("keydown", function(e) {
+      if (
+        e.key === "F12" ||
+        (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J" || e.key === "C")) ||
+        (e.ctrlKey && e.key === "U")
+      ) {
+        e.preventDefault();
+        return false;
+      }
+    });
+  </script>
+</body>
+</html>
