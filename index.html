@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="pt-BR"><head>
 	<meta charset="UTF-8">
-		<title>Aceleração de E-commerce – Feine Mídia – Feine Mídia</title>
+		<title>Aceleração de E-commerce – Feine Mídia</title>
 <meta name="robots" content="max-image-preview:large">
 <link rel="dns-prefetch" href="//fonts.googleapis.com">
 <link rel="alternate" type="application/rss+xml" title="Feed para Feine Mídia »" href="https://feinemidia.com/feed/">
@@ -667,6 +667,17 @@ var links = document.querySelectorAll('a');
 
 })();
 </script>
-	
+	<script>
+	   // Bloqueios de inspeção
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+    });
 
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+        e.preventDefault();
+      }
+    });
+  </script>
+	
 </body></html>
