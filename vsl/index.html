@@ -71,7 +71,7 @@
       autoplay
       controls
       disablepictureinpicture
-      controlslist="nodownload nofullscreen noremoteplay noplaybackrate"
+      controlslist="nodownload nofullscreen noremoteplay"
       src="vsl.mp4"
     ></video>
 
@@ -87,7 +87,7 @@
 
   <script>
     const player = new Plyr('#vsl', {
-      controls: ['play', 'progress', 'current-time', 'mute', 'volume'],
+      controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'playbackRate'],
     });
 
     // Delay com base no tempo do vídeo
