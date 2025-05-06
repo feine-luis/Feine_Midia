@@ -1,1 +1,66 @@
-<h1>Obrigado!</h1>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Página de Obrigado</title>
+  <style>
+    body {
+      background-color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      min-height: 100vh;
+      padding: 20px;
+      color: #222;
+    }
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+    h2 {
+      font-size: 20px;
+      font-weight: normal;
+      max-width: 600px;
+      line-height: 1.5;
+    }
+    footer {
+      margin-top: auto;
+      font-size: 14px;
+      color: #888;
+      padding-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Obrigado pelo seu tempo!</h1>
+  <h2>Em até 1 dia útil você terá um retorno com a solução que melhor se adequa ao seu cenário atual. Até breve!</h2>
+
+  <footer>
+    © 2025 Feine Mídia. Todos os direitos reservados.
+  </footer>
+
+      // Bloquear botão direito e teclas de inspeção
+  <script>
+    document.addEventListener("contextmenu", function(e) {
+      e.preventDefault();
+    });
+
+    document.addEventListener("keydown", function(e) {
+      if (
+        e.key === "F12" ||
+        (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J" || e.key === "C")) ||
+        (e.ctrlKey && e.key === "U")
+      ) {
+        e.preventDefault();
+        return false;
+      }
+    });
+  </script>
+
+</body>
+</html>
