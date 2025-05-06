@@ -106,7 +106,11 @@ src="https://www.facebook.com/tr?id=1497219257668884&ev=PageView&noscript=1"
   <script>
     const player = new Plyr('#vsl', {
       controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'playbackRate'],
-    });
+          playbackRate: {
+      enabled: true,
+      options: [0.5, 1, 1.25, 1.5, 2]
+    }
+  });
 
     // Delay com base no tempo do vídeo
     document.addEventListener("DOMContentLoaded", function () {
