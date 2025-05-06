@@ -1,11 +1,11 @@
 <!DOCTYPE html>
- <html lang="pt-br">
- <head>
-   <meta charset="UTF-8" />
-   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <title>Página de Obrigado</title>
- 
-     <!-- Favicon -->
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Página de Obrigado</title>
+
+      <!-- Favicon -->
    <link rel="icon" type="image/png" href="favicon.png">
  
      <!-- Meta Pixel Code -->
@@ -27,47 +27,60 @@
  /></noscript>
  <!-- End Meta Pixel Code -->
  
-   <style>
-     body {
-       background-color: white;
-       font-family: Arial, sans-serif;
-       display: flex;
-       flex-direction: column;
-       justify-content: center;
-       align-items: center;
-       text-align: center;
-       min-height: 100vh;
-       padding: 20px;
-       color: #222;
-     }
-     h1 {
-       font-size: 32px;
-       margin-bottom: 20px;
-     }
-     h2 {
-       font-size: 20px;
-       font-weight: normal;
-       max-width: 600px;
-       line-height: 1.5;
-     }
-     footer {
-       margin-top: 340px;
-       font-size: 14px;
-       color: #242424;
-       padding-top: 60px;
-     }
-   </style>
- </head>
- <body>
- 
-   <h1>Obrigado pelo seu tempo!</h1>
-   <h2>Em até 1 dia útil você terá um retorno com a solução que melhor se adequa ao seu cenário atual. Até breve!</h2>
- 
-   <footer>
-     © 2025 Feine Mídia. Todos os direitos reservados.
-   </footer>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
 
-      <script>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: white;
+    }
+
+    .wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: normal;
+      max-width: 600px;
+      line-height: 1.5;
+    }
+
+    footer {
+      font-size: 14px;
+      color: #888;
+      text-align: center;
+      padding: 20px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    <h1>Obrigado pelo seu tempo!</h1>
+    <h2>Em até 1 dia útil você terá um retorno com a solução que melhor se adequa ao seu cenário atual. Até breve!</h2>
+  </div>
+
+  <footer>
+    © 2025 Feine Mídia. Todos os direitos reservados.
+  </footer>
+
+       <script>
        // Bloquear botão direito e teclas de inspeção
      document.addEventListener("contextmenu", function(e) {
        e.preventDefault();
@@ -84,6 +97,6 @@
        }
      });
    </script>
- 
- </body>
- </html>
+
+</body>
+</html>
