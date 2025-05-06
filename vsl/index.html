@@ -1,160 +1,147 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>O erro que te impede de escalar as vendas do seu E-commerce</title>
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="O erro que te impede de escalar as vendas do seu E-commerce">
-  <meta property="og:description" content="Escalar é possível. Mesmo que você já tenha tentado de tudo.">
-  <meta property="og:image" content="https://feinemidia.com/vsl/imagem-preview.jpg">
-  <meta property="og:url" content="https://feinemidia.com/vsl">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png">
-
-  <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1497219257668884');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1497219257668884&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-
-  <!-- Plyr CSS -->
-  <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      background-color: white;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 40px 20px;
-      overflow-x: hidden;
-    }
-      .headline {
-      font-size: 24px;
-      max-width: 800px;
-      margin: 0 auto 30px auto;
-      color: #000;
-      line-height: 1.4;
-    }
-    .video-container {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    video {
-      width: 100%;
-      height: auto;
-      max-height: 450px;
-    }
-    .cta-button {
-      display: none;
-      margin-top: 30px;
-      background-color: green;
-      color: white;
-      font-size: 18px;
-      padding: 15px 30px;
-      border: none;
-      border-radius: 5px;
-      text-decoration: none;
-      cursor: pointer;
-    }
-    .cta-button:hover {
-      background-color: darkgreen;
-    }
-    .footer {
-      margin-top: 140px;
-      font-size: 14px;
-      color: #242424;
-    }
-  </style>
-</head>
-<body>
-
-<h1 class="headline">
-  Quanto mais você tenta vender, menos seu e-commerce cresce.<br />
-  <strong>Descubra o motivo.</strong>
-</h1>
-  
-  <div class="video-container">
-    <video
-      id="vsl"
-      playsinline
-      autoplay
-      controls
-      disablepictureinpicture
-      controlslist="nodownload nofullscreen noremoteplay noplaybackrate"
-      src="vsl.mp4"
-    ></video>
-
-    <a href="https://tally.so/r/nWg9kk" id="cta-button" class="cta-button">QUERO DESTRAVAR</a>
-
-    <div class="footer">
-      <p>&copy; 2025 Feine Mídia. Todos os direitos reservados.</p>
-    </div>
-  </div>
-
-  <!-- Plyr JS -->
-  <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
-
-  <script>
-    const player = new Plyr('#vsl', {
-      controls: ['play', 'progress', 'current-time', 'mute', 'volume'],
-    }
-  });
-
-    // Delay com base no tempo do vídeo
-    document.addEventListener("DOMContentLoaded", function () {
-      const video = document.getElementById("vsl");
-      const button = document.getElementById("cta-button");
-      const DELAY_SECONDS = 260;
-      const STORAGE_KEY = "vsl_unlocked";
-
-      if (localStorage.getItem(STORAGE_KEY) === "true") {
-        button.style.display = "inline-block";
-      } else {
-        video.addEventListener("timeupdate", function () {
-          if (video.currentTime >= DELAY_SECONDS && button.style.display !== "inline-block") {
-            button.style.display = "inline-block";
-            localStorage.setItem(STORAGE_KEY, "true");
-          }
-        });
-      }
-    });
-
-    // Bloquear botão direito e teclas de inspeção
-    document.addEventListener("contextmenu", function(e) {
-      e.preventDefault();
-    });
-
-    document.addEventListener("keydown", function(e) {
-      if (
-        e.key === "F12" ||
-        (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J" || e.key === "C")) ||
-        (e.ctrlKey && e.key === "U")
-      ) {
-        e.preventDefault();
-        return false;
-      }
-    });
-  </script>
-</body>
-</html>
+ <html lang="pt-br">
+ <head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   <title>O erro que te impede de escalar as vendas do seu E-commerce</title>
+ 
+   <!-- Open Graph -->
+   <meta property="og:title" content="O erro que te impede de escalar as vendas do seu E-commerce">
+   <meta property="og:description" content="Escalar é possível. Mesmo que você já tenha tentado de tudo.">
+   <meta property="og:image" content="https://feinemidia.com/vsl/imagem-preview.jpg">
+   <meta property="og:url" content="https://feinemidia.com/vsl">
+   <meta name="twitter:card" content="summary_large_image">
+ 
+   <!-- Favicon -->
+   <link rel="icon" type="image/png" href="favicon.png">
+ 
+   <!-- Meta Pixel Code -->
+ <script>
+ !function(f,b,e,v,n,t,s)
+ {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+ n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+ if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+ n.queue=[];t=b.createElement(e);t.async=!0;
+ t.src=v;s=b.getElementsByTagName(e)[0];
+ s.parentNode.insertBefore(t,s)}(window, document,'script',
+ 'https://connect.facebook.net/en_US/fbevents.js');
+ fbq('init', '1497219257668884');
+ fbq('track', 'PageView');
+ </script>
+ <noscript><img height="1" width="1" style="display:none"
+ src="https://www.facebook.com/tr?id=1497219257668884&ev=PageView&noscript=1"
+ /></noscript>
+ <!-- End Meta Pixel Code -->
+ 
+   <!-- Plyr CSS -->
+   <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+ 
+   <style>
+     * {
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+     }
+     body {
+       background-color: white;
+       font-family: Arial, sans-serif;
+       text-align: center;
+       padding: 40px 20px;
+       overflow-x: hidden;
+     }
+     .video-container {
+       max-width: 800px;
+       margin: 0 auto;
+     }
+     video {
+       width: 100%;
+       height: auto;
+       max-height: 450px;
+     }
+     .cta-button {
+       display: none;
+       margin-top: 30px;
+       background-color: green;
+       color: white;
+       font-size: 18px;
+       padding: 15px 30px;
+       border: none;
+       border-radius: 5px;
+       text-decoration: none;
+       cursor: pointer;
+     }
+     .cta-button:hover {
+       background-color: darkgreen;
+     }
+     .footer {
+       margin-top: 140px;
+       font-size: 14px;
+       color: #242424;
+     }
+   </style>
+ </head>
+ <body>
+ 
+   <div class="video-container">
+     <video
+       id="vsl"
+       playsinline
+       autoplay
+       controls
+       disablepictureinpicture
+       controlslist="nodownload nofullscreen noremoteplay"
+       src="vsl.mp4"
+     ></video>
+ 
+     <a href="https://tally.so/r/nWg9kk" id="cta-button" class="cta-button">QUERO DESTRAVAR</a>
+ 
+     <div class="footer">
+       <p>&copy; 2025 Feine Mídia. Todos os direitos reservados.</p>
+     </div>
+   </div>
+ 
+   <!-- Plyr JS -->
+   <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+ 
+   <script>
+     const player = new Plyr('#vsl', {
+       controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'playbackRate'],
+     });
+ 
+     // Delay com base no tempo do vídeo
+     document.addEventListener("DOMContentLoaded", function () {
+       const video = document.getElementById("vsl");
+       const button = document.getElementById("cta-button");
+       const DELAY_SECONDS = 260;
+       const STORAGE_KEY = "vsl_unlocked";
+ 
+       if (localStorage.getItem(STORAGE_KEY) === "true") {
+         button.style.display = "inline-block";
+       } else {
+         video.addEventListener("timeupdate", function () {
+           if (video.currentTime >= DELAY_SECONDS && button.style.display !== "inline-block") {
+             button.style.display = "inline-block";
+             localStorage.setItem(STORAGE_KEY, "true");
+           }
+         });
+       }
+     });
+ 
+     // Bloquear botão direito e teclas de inspeção
+     document.addEventListener("contextmenu", function(e) {
+       e.preventDefault();
+     });
+ 
+     document.addEventListener("keydown", function(e) {
+       if (
+         e.key === "F12" ||
+         (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J" || e.key === "C")) ||
+         (e.ctrlKey && e.key === "U")
+       ) {
+         e.preventDefault();
+         return false;
+       }
+     });
+   </script>
+ </body>
+ </html>
