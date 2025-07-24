@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método FM - Levamos seu e-commerce para além dos 6 dígitos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section {
+            padding: 80px 0;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0;
+            text-align: center;
+            background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+            border-bottom: 1px solid #f0f0f0;
+            animation-delay: 0.2s;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 32px;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #1a1a1a 0%, #4a4a4a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .subheadline {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        /* Content Sections */
+        .content-section {
+            animation-delay: 0.4s;
+        }
+
+        .content-section h2 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 600;
+            margin-bottom: 40px;
+            text-align: center;
+            letter-spacing: -0.01em;
+            color: #1a1a1a;
+        }
+
+        .content-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 24px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .content-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Features Section */
+        .features {
+            background: #f8f9fa;
+            border-top: 1px solid #f0f0f0;
+            border-bottom: 1px solid #f0f0f0;
+            animation-delay: 0.6s;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .feature-item {
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            border: 1px solid #f0f0f0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #1a1a1a, #666);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-item h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+
+        .feature-summary {
+            text-align: center;
+            margin-top: 60px;
+            padding: 60px 40px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+            border-radius: 20px;
+            color: white;
+            box-shadow: 0 10px 40px rgba(26, 26, 26, 0.15);
+        }
+
+        .feature-summary p {
+            font-size: 1.3rem;
+            color: white;
+            font-weight: 500;
+            margin-bottom: 16px;
+            opacity: 0.95;
+        }
+
+        .feature-summary p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Differentials Section */
+        .differentials {
+            animation-delay: 0.8s;
+        }
+
+        .differentials-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .differentials p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            margin-bottom: 28px;
+        }
+
+        .differentials p:first-of-type {
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        /* Investment Section */
+        .investment {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            animation-delay: 1s;
+        }
+
+        .investment h2 {
+            color: white;
+            margin-bottom: 60px;
+        }
+
+        .investment-details {
+            max-width: 600px;
+            margin: 0 auto 60px;
+        }
+
+        .investment-details p {
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            color: #e0e0e0;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #1a1a1a;
+            padding: 20px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            letter-spacing: 0.01em;
+        }
+
+        /* FAQ Section */
+        .faq {
+            animation-delay: 1.2s;
+        }
+
+        .faq-item {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #f0f0f0;
+        }
+
+        .faq-question {
+            padding: 32px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            position: relative;
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 32px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            font-weight: 300;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            padding: 0;
+            color: #444;
+            line-height: 1.7;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding: 0 32px 32px;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        /* Footer */
+        footer {
+            background: #f8f9fa;
+            padding: 80px 0;
+            text-align: center;
+            border-top: 1px solid #f0f0f0;
+            animation-delay: 1.4s;
+        }
+
+        .footer-cta {
+            margin-bottom: 40px;
+        }
+
+        .footer-cta .cta-button {
+            background: #1a1a1a;
+            color: white;
+        }
+
+        .copyright {
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 1px solid #e0e0e0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Desktop hover effects */
+        @media (hover: hover) and (pointer: fine) {
+            .feature-item:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            }
+
+            .feature-item:hover::before {
+                transform: scaleX(1);
+            }
+
+            .faq-question:hover {
+                background: #f0f0f0;
+            }
+
+            .cta-button:hover {
+                background: transparent;
+                color: white;
+                border-color: white;
+                transform: translateY(-2px);
+            }
+
+            .footer-cta .cta-button:hover {
+                background: #333;
+                color: white;
+                border-color: transparent;
+                transform: translateY(-2px);
+            }
+        }
+
+        /* Mobile-specific styles */
+        @media (max-width: 768px) {
+            .section {
+                padding: 60px 0;
+            }
+
+            .hero {
+                padding: 80px 0;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .feature-item {
+                padding: 24px;
+            }
+
+            .feature-summary {
+                padding: 40px 24px;
+            }
+
+            .feature-summary p {
+                font-size: 1.1rem;
+            }
+
+            .investment-details {
+                margin-bottom: 40px;
+            }
+
+            .price {
+                font-size: 2.5rem;
+            }
+
+            .cta-button {
+                padding: 18px 32px;
+                font-size: 1rem;
+            }
+
+            .faq-question {
+                padding: 24px;
+                font-size: 1rem;
+            }
+
+            .faq-question::after {
+                right: 24px;
+            }
+
+            .faq-item.active .faq-answer {
+                padding: 0 24px 24px;
+            }
+
+            /* Remove transforms on mobile for better performance */
+            .feature-item {
+                transform: none;
+            }
+
+            .cta-button {
+                transform: none;
+            }
+        }
+
+        /* Very small screens */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .feature-item {
+                padding: 20px;
+            }
+
+            .feature-summary {
+                padding: 32px 20px;
+            }
+
+            .faq-question {
+                padding: 20px;
+            }
+
+            .faq-question::after {
+                right: 20px;
+            }
+
+            .faq-item.active .faq-answer {
+                padding: 0 20px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero section">
+        <div class="container">
+            <h1>Seu e-commerce está travado nos 5 dígitos?</h1>
+            <p class="subheadline">O Método FM assume o controle da comunicação da sua marca para corrigir o que está quebrado e construir um crescimento consistente e sustentável.</p>
+            <br>
+            <p class="subheadline" style="font-size: 1.1rem; margin-top: 20px;">Um método completo, criado para e-commerces que já vendem, mas ainda não conseguiram escalar.</p>
+        </div>
+    </section>
+
+    <!-- Why Section -->
+    <section class="section content-section">
+        <div class="container">
+            <h2>Por que seu e-commerce ainda está travado?</h2>
+            <p>Vender até R$ 20 mil, R$ 30 mil ou R$ 50 mil por mês é possível com campanha e criativo. Mas passar disso exige muito mais.</p>
+            
+            <p>O Método FM não é sobre "tráfego" ou "anúncio criativo".<br>
+            É sobre repensar toda a comunicação da sua marca: do posicionamento à retenção.</p>
+            
+            <p>Por isso, ao entrar, revisamos tudo. Começamos reorganizando a estrutura, a percepção da marca, a proposta de valor, desenhamos todo o funil de conversão — e só então aplicamos o plano de execução para cada etapa desse funil.</p>
+            
+            <p>Mantemos o que está funcionando, corrigimos o que está travando, e juntos construímos uma <strong>marca</strong> que vende.<br>
+            Sem achismos. Com <strong>método</strong>.</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section features">
+        <div class="container">
+            <h2>O que está incluso no Método FM</h2>
+            <p style="text-align: center; margin-bottom: 60px; font-size: 1.1rem;">Ao contratar o Método FM, você conta com:</p>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h3>Estratégia completa e execução focada em múltiplos canais</h3>
+                </div>
+                <div class="feature-item">
+                    <h3>Planejamento real para topo, meio e fundo de funil</h3>
+                </div>
+                <div class="feature-item">
+                    <h3>Copywriting estratégico para todas as etapas da jornada</h3>
+                </div>
+                <div class="feature-item">
+                    <h3>Direção criativa e análise de criativos de venda</h3>
+                </div>
+                <div class="feature-item">
+                    <h3>Tráfego e testes contínuos com base em dados reais</h3>
+                </div>
+                <div class="feature-item">
+                    <h3>Automação, nutrição e remarketing com foco em recorrência</h3>
+                </div>
+                <div class="feature-item">
+                    <h3>Painel de acompanhamento do projeto e relatório com métricas que importam para a escala</h3>
+                </div>
+            </div>
+
+            <div class="feature-summary">
+                <p>Tudo entregue por nós.</p>
+                <p>Sem depender do seu time.</p>
+                <p>Sem microgerenciamento.</p>
+                <p>Sem decisões baseadas em "feeling".</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Differentials Section -->
+    <section class="section differentials content-section">
+        <div class="container">
+            <h2>Por que o Método FM é diferente</h2>
+            <div class="differentials-content">
+                <p>A diferença está na estrutura.</p>
+                <p>Aqui você não contrata um operador, nem mais uma agência de tráfego.</p>
+                
+                <p>Você contrata um sistema validado, com método, equipe, processo e foco total em crescimento.</p>
+                
+                <p>Pegamos o seu e-commerce e plugamos nosso método, com isso corrigimos todos os pontos que estão travando o seu crescimento.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Section -->
+    <section class="section investment">
+        <div class="container">
+            <h2>Investimento</h2>
+            <div class="investment-details">
+                <div class="price">R$ 6.000/mês</div>
+                <p>Contrato mínimo de 6 meses</p>
+                <p>Apenas para e-commerces qualificados, com potencial real de escala</p>
+            </div>
+            
+            <a href="https://wa.me/message/HZEVDS73K74HM1" class="cta-button">Quero destravar com o Método FM</a>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq">
+        <div class="container">
+            <h2>Perguntas Frequentes</h2>
+            
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">Já tenho um time interno. Vocês trabalham junto com ele?</div>
+                <div class="faq-answer">Não. O Método FM é uma operação própria, com equipe e execução 100% sob nossa responsabilidade. Não operamos como apoio a times internos.</div>
+            </div>
+            
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">Vocês fazem conteúdo para redes sociais também?</div>
+                <div class="faq-answer">Não produzimos os posts, mas entregamos uma linha editorial com orientações claras para que seu time mantenha a comunicação alinhada à estratégia.</div>
+            </div>
+            
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">Eu preciso aprovar as campanhas antes de entrarem no ar?</div>
+                <div class="faq-answer">Sim. As campanhas são criadas com base no nosso método, de forma autônoma, mas sua aprovação é sempre solicitada antes da veiculação — especialmente nas etapas iniciais, onde ainda estamos conhecendo melhor sua marca.</div>
+            </div>
+            
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">Qual o perfil de e-commerce que se encaixa no Método FM?</div>
+                <div class="faq-answer">Trabalhamos apenas com e-commerces que já validaram produto, mas estão travados nos 5 dígitos mensais. Nossa proposta é destravar esse crescimento e escalar com consistência de forma sustentável.</div>
+            </div>
+            
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">Vocês garantem resultado?</div>
+                <div class="faq-answer">Não prometemos prazo, mas garantimos:<br><br>• Execução de alto nível<br>• Um método validado<br>• Entrega real com foco em crescimento<br><br>O tempo para alcançar os 6 dígitos varia conforme o estágio do e-commerce e particularidades do nicho, mas garantimos crescimento constante e sustentável.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="section">
+        <div class="container">
+            <div class="footer-cta">
+                <a href="https://wa.me/message/HZEVDS73K74HM1" class="cta-button">Quero destravar com o Método FM</a>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2025 Método FM. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFaq(element) {
+            // Close other FAQs (optional - remove if you want multiple open)
+            const allFaqs = document.querySelectorAll('.faq-item');
+            allFaqs.forEach(faq => {
+                if (faq !== element) {
+                    faq.classList.remove('active');
+                }
+            });
+            
+            // Toggle current FAQ
+            element.classList.toggle('active');
+        }
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = '0s';
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Smooth scroll for mobile
+        document.documentElement.style.scrollBehavior = 'smooth';
+
+        // Prevent zoom on input focus (mobile)
+        if (window.innerWidth <= 768) {
+            const viewport = document.querySelector('meta[name=viewport]');
+            viewport.setAttribute('content', viewport.content + ', user-scalable=no');
+        }
+    </script>
+</body>
+</html>
