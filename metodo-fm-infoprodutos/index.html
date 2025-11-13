@@ -200,6 +200,70 @@
             color: #d0d0d0;
         }
 
+        /* FAQ Section */
+        .faq {
+            margin-bottom: 80px;
+        }
+
+        .faq h2 {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .faq-item {
+            max-width: 800px;
+            margin: 0 auto 20px;
+            background: #1a1a1a;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #2a2a2a;
+            transition: border-color 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: #00ff87;
+        }
+
+        .faq-question {
+            padding: 32px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #ffffff;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            position: relative;
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 32px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: #00ff87;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            padding: 0;
+            color: #b0b0b0;
+            line-height: 1.7;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding: 0 32px 32px;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: translateY(-50%) rotate(45deg);
+        }
+
         .cta-section {
             background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
             padding: 60px 40px;
@@ -264,6 +328,19 @@
             .differentiator,
             .cta-section {
                 padding: 30px 20px;
+            }
+
+            .faq-question {
+                padding: 24px;
+                font-size: 1rem;
+            }
+
+            .faq-question::after {
+                right: 24px;
+            }
+
+            .faq-item.active .faq-answer {
+                padding: 0 24px 24px;
             }
         }
     </style>
@@ -402,62 +479,34 @@
         </div>
 
         <!-- FAQ Section -->
-        <div class="section">
-            <h2 class="section-title" style="text-align: center; margin-bottom: 50px;">Perguntas Frequentes</h2>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Já tenho um time interno. Vocês trabalham junto com ele?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Não. O Método FM é uma operação própria, com equipe e execução 100% sob nossa responsabilidade. Não operamos como apoio a times internos.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Vocês fazem conteúdo para redes sociais também?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Não produzimos os posts, mas entregamos uma linha editorial com orientações claras para que seu time mantenha a comunicação alinhada à estratégia.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Eu preciso aprovar as campanhas antes de entrarem no ar?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Sim. As campanhas são criadas com base no nosso método, de forma autônoma, mas sua aprovação é sempre solicitada antes da veiculação — especialmente nas etapas iniciais, onde ainda estamos conhecendo melhor sua marca.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Qual o perfil de infoprodutor que se encaixa no Método FM?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Trabalhamos apenas com infoprodutores que já validaram oferta, mas estão travados nos 5 dígitos mensais. Nossa proposta é destravar esse crescimento e escalar com consistência de forma sustentável.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Vocês garantem resultado?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Não prometemos prazo, mas garantimos:</p>
-                        <p style="margin-top: 10px;">• Execução de alto nível<br>• Um método validado<br>• Entrega real com foco em crescimento</p>
-                        <p style="margin-top: 15px;">O tempo para alcançar os 6 dígitos varia conforme o estágio do infoproduto e particularidades do nicho, mas garantimos crescimento constante e sustentável.</p>
-                    </div>
-                </div>
+        <section class="section faq">
+            <h2 class="section-title">Perguntas Frequentes</h2>
+            
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">Já tenho um time interno. Vocês trabalham junto com ele?</div>
+                <div class="faq-answer">Não. O Método FM é uma operação própria, com equipe e execução 100% sob nossa responsabilidade. Não operamos como apoio a times internos.</div>
             </div>
-        </div>
+            
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">Vocês fazem conteúdo para redes sociais também?</div>
+                <div class="faq-answer">Não produzimos os posts, mas entregamos uma linha editorial com orientações claras para que seu time mantenha a comunicação alinhada à estratégia.</div>
+            </div>
+            
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">Eu preciso aprovar as campanhas antes de entrarem no ar?</div>
+                <div class="faq-answer">Sim. As campanhas são criadas com base no nosso método, de forma autônoma, mas sua aprovação é sempre solicitada antes da veiculação — especialmente nas etapas iniciais, onde ainda estamos conhecendo melhor sua marca.</div>
+            </div>
+            
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">Qual o perfil de infoprodutor que se encaixa no Método FM?</div>
+                <div class="faq-answer">Trabalhamos apenas com infoprodutores que já validaram oferta, mas estão travados nos 5 dígitos mensais. Nossa proposta é destravar esse crescimento e escalar com consistência de forma sustentável.</div>
+            </div>
+            
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">Vocês garantem resultado?</div>
+                <div class="faq-answer">Não prometemos prazo, mas garantimos:<br><br>• Execução de alto nível<br>• Um método validado<br>• Entrega real com foco em crescimento<br><br>O tempo para alcançar os 6 dígitos varia conforme o estágio do infoproduto e particularidades do nicho, mas garantimos crescimento constante e sustentável.</div>
+            </div>
+        </section>
 
         <!-- CTA -->
         <div class="cta-section">
@@ -472,25 +521,18 @@
     </div>
 
     <script>
-        // FAQ Accordion
-        document.querySelectorAll('.faq-question').forEach(button => {
-            button.addEventListener('click', () => {
-                const faqItem = button.parentElement;
-                const isActive = faqItem.classList.contains('active');
-                
-                // Close all items
-                document.querySelectorAll('.faq-item').forEach(item => {
-                    item.classList.remove('active');
-                    item.querySelector('.faq-icon').textContent = '+';
-                });
-                
-                // Open clicked item if it wasn't active
-                if (!isActive) {
-                    faqItem.classList.add('active');
-                    button.querySelector('.faq-icon').textContent = '−';
+        function toggleFaq(element) {
+            // Close other FAQs
+            const allFaqs = document.querySelectorAll('.faq-item');
+            allFaqs.forEach(faq => {
+                if (faq !== element) {
+                    faq.classList.remove('active');
                 }
             });
-        });
+            
+            // Toggle current FAQ
+            element.classList.toggle('active');
+        }
     </script>
 </body>
 </html>
