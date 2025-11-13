@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Verdade Sobre Infoprodutos Travados - Método FM</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: #fafafa;
+            color: #2c2c2c;
+            line-height: 1.9;
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 80px 30px;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 40px;
+            color: #1a1a1a;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        h2 {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            font-weight: 700;
+            line-height: 1.4;
+            margin: 60px 0 30px;
+            color: #1a1a1a;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        p {
+            margin-bottom: 28px;
+            color: #3c3c3c;
+        }
+
+        .lead {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            color: #1a1a1a;
+            font-weight: 400;
+        }
+
+        .highlight-box {
+            background: #f5f5f5;
+            border-left: 4px solid #2c2c2c;
+            padding: 30px;
+            margin: 40px 0;
+            border-radius: 4px;
+        }
+
+        .highlight-box p {
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .highlight-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .list-box {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            padding: 35px;
+            margin: 40px 0;
+            border-radius: 8px;
+        }
+
+        .list-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .list-box li {
+            padding-left: 30px;
+            margin-bottom: 18px;
+            position: relative;
+            line-height: 1.7;
+        }
+
+        .list-box li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+            color: #2c2c2c;
+        }
+
+        .list-box li:last-child {
+            margin-bottom: 0;
+        }
+
+        .emphasis {
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .italic {
+            font-style: italic;
+            color: #555;
+        }
+
+        .quote {
+            font-size: 1.15rem;
+            font-style: italic;
+            color: #555;
+            border-left: 3px solid #d0d0d0;
+            padding-left: 25px;
+            margin: 40px 0;
+        }
+
+        .divider {
+            width: 60px;
+            height: 3px;
+            background: #2c2c2c;
+            margin: 60px auto;
+        }
+
+        .cta-section {
+            background: #2c2c2c;
+            color: #ffffff;
+            padding: 50px 40px;
+            margin: 80px 0 40px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            color: #ffffff;
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+
+        .cta-section p {
+            color: #e0e0e0;
+            margin-bottom: 35px;
+            font-size: 1.05rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ffffff;
+            color: #2c2c2c;
+            padding: 18px 45px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .signature {
+            margin-top: 60px;
+            font-family: 'Brush Script MT', cursive;
+            font-size: 1.8rem;
+            color: #2c2c2c;
+        }
+
+        .footer-copyright {
+            text-align: center;
+            padding: 40px 20px 20px;
+            margin-top: 60px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .footer-copyright p {
+            color: #999;
+            font-size: 0.9rem;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                font-size: 17px;
+            }
+
+            .container {
+                padding: 50px 25px;
+            }
+
+            .list-box,
+            .highlight-box {
+                padding: 25px;
+            }
+
+            .cta-section {
+                padding: 40px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Depois de 5 anos analisando centenas de infoprodutores, descobri algo que vai contra tudo que pregam por aí.</h1>
+
+        <p class="lead">Existem dois tipos de infoprodutores: os que ainda acham que o problema é falta de tráfego, e os que já entenderam onde realmente está o gargalo.</p>
+
+        <p>Sabe o que todos os infoprodutos travados que analisei tinham em comum?</p>
+
+        <div class="highlight-box">
+            <p>Campanhas otimizadas</p>
+            <p>Produto validado</p>
+            <p>Equipe de mídia ativa</p>
+            <p>Orçamento disponível</p>
+            <p class="emphasis">E mesmo assim... resultados estagnados há meses.</p>
+        </div>
+
+        <p>Durante muito tempo, eu também acreditei no mito da performance pura. Se otimizasse o bastante, eventualmente as vendas escalariam, certo?</p>
+
+        <p class="emphasis">Errado.</p>
+
+        <p>A verdade desconfortável é que a maioria dos infoprodutos trava porque está tentando resolver um problema estrutural com band-aids táticos.</p>
+
+        <p><span class="emphasis">Não importa quanto você invista em mídia se você não tem uma comunidade engajada.</span> Não importa quantos leads você capture se sua oferta não faz sentido. Não importa quanto você escale se seu funil tem vazamentos estruturais.</p>
+
+        <div class="divider"></div>
+
+        <h2>Nos últimos dois anos, um padrão ficou impossível de ignorar:</h2>
+
+        <p>Infoprodutores que construíram comunidades reais crescem 3x mais rápido que aqueles que dependem só de anúncios.</p>
+
+        <p>Infoprodutores com ofertas bem posicionadas têm custo de aquisição 40% menor.</p>
+
+        <p>Infoprodutores com funil estruturado conseguem escalar sem queimar a audiência.</p>
+
+        <p class="emphasis">O que mudou?</p>
+
+        <p>Simples: o mercado amadureceu. O consumidor ficou mais exigente. E quem ainda joga apenas no tático está perdendo espaço para quem entende o jogo completo.</p>
+
+        <div class="quote">
+            "Enquanto aqui no Brasil tratamos marketing digital como 'botão de impulsionar', lá fora nunca abandonaram os fundamentos: comunidade, oferta, funil, posicionamento, autoridade."
+        </div>
+
+        <p>Eles sabem que aquisição saudável só acontece quando há uma base estratégica sólida por trás.</p>
+
+        <div class="divider"></div>
+
+        <h2>Quando você para de ver infoproduto como um funil de conversão e começa a enxergá-lo como um ecossistema completo, tudo muda.</h2>
+
+        <p>A venda deixa de ser o objetivo e vira consequência natural de um sistema bem estruturado.</p>
+
+        <p class="emphasis">É aí que o crescimento real acontece.</p>
+
+        <p>Meu papel não é mais otimizar campanhas (embora isso ainda seja feito, quando necessário).</p>
+
+        <p><span class="emphasis">Meu trabalho é identificar o gargalo invisível que está travando seu crescimento.</span></p>
+
+        <div class="list-box">
+            <p style="margin-bottom: 25px; font-weight: 600;">Pode ser:</p>
+            <ul>
+                <li>Uma oferta que não comunica valor de forma clara</li>
+                <li>Um funil que vaza mais leads do que converte</li>
+                <li>Falta de construção de comunidade e autoridade</li>
+                <li>Posicionamento genérico que não diferencia você da concorrência</li>
+                <li>Ausência de estratégia de retenção e ascensão</li>
+                <li>Dependência excessiva de tráfego frio sem nutrição adequada</li>
+            </ul>
+        </div>
+
+        <p>Na maioria dos casos, é uma combinação de vários pontos.</p>
+
+        <p>E o mais frustrante? Você não consegue ver de dentro. É como tentar ler o rótulo do pote que você está dentro.</p>
+
+        <div class="divider"></div>
+
+        <h2>Se você está lendo até aqui, é porque em algum nível você também sente que está rodando em círculos.</h2>
+
+        <p>Investindo em mídia, otimizando campanhas, testando criativos... mas sem sair do lugar.</p>
+
+        <p>Os mesmos R$ 30 mil, R$ 40 mil, R$ 50 mil todo mês. Como se houvesse um teto invisível impedindo você de crescer.</p>
+
+        <p class="emphasis">Se esse é seu caso, eu tenho uma proposta.</p>
+
+        <p>Não vou te vender fórmula mágica nem prometer resultados impossíveis.</p>
+
+        <p>Mas se você estiver pronto para encarar o real motivo do seu faturamento travado, posso te mostrar exatamente onde está o problema.</p>
+
+        <p>Vou analisar seu caso com calma e, se fizer sentido para ambos, te mostrar o caminho para destravar seu crescimento de uma vez por todas.</p>
+
+        <p class="italic">Não é sobre trabalhar mais. É sobre trabalhar certo.</p>
+
+        <div class="signature">
+            — Método FM
+        </div>
+
+        <div class="cta-section">
+            <h2>Pronto para identificar o que realmente está travando seu infoproduto?</h2>
+            <p>Vamos analisar seu caso e traçar o plano para você romper a barreira dos 6 dígitos.</p>
+            <a href="https://wa.me/5547999999999?text=Olá!%20Li%20a%20carta%20e%20quero%20conversar%20sobre%20o%20Método%20FM" class="cta-button">Quero conversar com o time FM</a>
+        </div>
+
+        <div class="footer-copyright">
+            <p>© 2025 Método FM. Todos os direitos reservados.</p>
+        </div>
+    </div>
+</body>
+</html>
