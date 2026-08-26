@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Editorial premium claro — papel quente, tinta quase preta, bronze */
+    --background: 40 33% 97%;
+    --foreground: 35 18% 9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 35 18% 9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 35 18% 9%;
+
+    --primary: 35 18% 9%;
+    --primary-foreground: 40 33% 97%;
+
+    --secondary: 38 22% 92%;
+    --secondary-foreground: 35 18% 9%;
+
+    --muted: 38 22% 92%;
+    --muted-foreground: 32 9% 40%;
+
+    --accent: 38 42% 46%;
+    --accent-foreground: 40 33% 97%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 40 33% 97%;
+
+    --border: 36 16% 88%;
+    --input: 36 16% 88%;
+    --ring: 38 42% 46%;
+
+    --radius: 0.875rem;
+
+    --sidebar-background: 40 33% 97%;
+    --sidebar-foreground: 35 18% 9%;
+    --sidebar-primary: 35 18% 9%;
+    --sidebar-primary-foreground: 40 33% 97%;
+    --sidebar-accent: 38 22% 92%;
+    --sidebar-accent-foreground: 35 18% 9%;
+    --sidebar-border: 36 16% 88%;
+    --sidebar-ring: 38 42% 46%;
+  }
+
+  .dark {
+    --background: 35 18% 7%;
+    --foreground: 40 33% 96%;
+
+    --card: 35 18% 9%;
+    --card-foreground: 40 33% 96%;
+
+    --popover: 35 18% 9%;
+    --popover-foreground: 40 33% 96%;
+
+    --primary: 40 33% 96%;
+    --primary-foreground: 35 18% 9%;
+
+    --secondary: 35 12% 15%;
+    --secondary-foreground: 40 33% 96%;
+
+    --muted: 35 12% 15%;
+    --muted-foreground: 38 8% 65%;
+
+    --accent: 38 42% 52%;
+    --accent-foreground: 35 18% 9%;
+
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 40 33% 96%;
+
+    --border: 35 12% 17%;
+    --input: 35 12% 17%;
+    --ring: 38 42% 52%;
+
+    --sidebar-background: 35 18% 7%;
+    --sidebar-foreground: 40 33% 96%;
+    --sidebar-primary: 40 33% 96%;
+    --sidebar-primary-foreground: 35 18% 9%;
+    --sidebar-accent: 35 12% 15%;
+    --sidebar-accent-foreground: 40 33% 96%;
+    --sidebar-border: 35 12% 17%;
+    --sidebar-ring: 38 42% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background font-sans text-foreground antialiased;
+  }
+}
+
+@layer components {
+  /* Rótulo editorial maiúsculo, usado como eyebrow acima dos títulos */
+  .eyebrow {
+    @apply text-[13px] font-semibold uppercase tracking-[0.22em] text-accent;
+  }
+
+  /* Linha divisória fina */
+  .hairline {
+    @apply h-px w-full bg-border;
+  }
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+}
