@@ -35,7 +35,7 @@ jobs:
 
       - name: Install dependencies
         working-directory: site-metodofm
-        run: pnpm install --no-frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: Build (production)
         working-directory: site-metodofm
