@@ -10,7 +10,7 @@ export const Navbar = () => {
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
         <a href="#top" className="flex items-center">
           <img
-            src="/logo.png"
+            src={`${import.meta.env.BASE_URL}logo.png`}
             alt="Método FM"
             className="h-11 w-auto sm:h-12"
           />
