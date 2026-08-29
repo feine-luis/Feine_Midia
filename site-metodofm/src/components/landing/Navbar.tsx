@@ -8,11 +8,12 @@ export const Navbar = () => {
   return (
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/85 backdrop-blur-md">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
-        <a
-          href="#top"
-          className="font-display text-xl font-semibold tracking-tight text-foreground"
-        >
-          Método<span className="text-accent"> FM</span>
+        <a href="#top" className="flex items-center">
+          <img
+            src="/logo.png"
+            alt="Método FM"
+            className="h-11 w-auto sm:h-12"
+          />
         </a>
         <a
           href={APPLY_URL}

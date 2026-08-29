@@ -7,7 +7,7 @@ export const APPLY_URL = "https://tally.so/r/nWg9kk";
 
 type CtaButtonProps = {
   label: string;
-  variant?: "ink" | "gold" | "paper";
+  variant?: "ink" | "accent" | "paper";
   className?: string;
 };
 
@@ -21,7 +21,7 @@ export const CtaButton = ({ label, variant = "ink", className }: CtaButtonProps)
       "group inline-flex items-center justify-center gap-2.5 rounded-full px-8 py-4 text-[15px] font-semibold tracking-tight transition-all duration-300",
       variant === "ink" &&
         "bg-foreground text-background hover:bg-accent hover:text-accent-foreground",
-      variant === "gold" &&
+      variant === "accent" &&
         "bg-accent text-accent-foreground hover:bg-background hover:text-foreground",
       variant === "paper" &&
         "bg-background text-foreground hover:bg-accent hover:text-accent-foreground",

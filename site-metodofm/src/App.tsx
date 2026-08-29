@@ -8,9 +8,7 @@ import { routers } from "./router";
 const queryClient = new QueryClient();
 
 const App = () => {
-  const router = createBrowserRouter(routers, {
-    basename: import.meta.env.BASE_URL,
-  });
+  const router = createBrowserRouter(routers);
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>

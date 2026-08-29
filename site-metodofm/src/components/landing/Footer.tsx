@@ -17,7 +17,7 @@ export const Footer = () => {
 
         <Reveal delay={0.05}>
           <div className="mt-9 flex justify-center">
-            <CtaButton variant="gold" label={t("landing.footer.cta")} />
+            <CtaButton variant="accent" label={t("landing.footer.cta")} />
           </div>
         </Reveal>
 

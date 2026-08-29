@@ -25,7 +25,7 @@ export const Investment = () => {
             {t("landing.investment.line2")}
           </p>
           <div className="mt-10 flex justify-center">
-            <CtaButton variant="gold" label={t("landing.investment.cta")} />
+            <CtaButton variant="accent" label={t("landing.investment.cta")} />
           </div>
         </Reveal>
       </div>
